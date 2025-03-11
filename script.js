@@ -67,7 +67,7 @@ const languageDialog = document.getElementById('language-dialog');
 const languageOptionsContainer = document.getElementById('language-options');
 const closeButton = document.getElementById('btn-dialog-close');
 
-let deathYear = null;
+let deathYear =  localStorage.getItem('deathYear') || null;
 const deathYearDialog = document.getElementById('death-year-dialog');
 const deathYearInput = document.getElementById('death-year');
 const submitDeathYear = document.getElementById('submit-death-year');
@@ -83,6 +83,7 @@ window.addEventListener('load', () => {
 submitDeathYear.addEventListener('click', () => {
   const year = parseInt(deathYearInput.value);
   if (year >= 2024 && year <= 2100) {
+    localStorage.setItem('deathYear', year);
     deathYear = year;
     deathYearDialog.close();
     updateCountdownTimer();
@@ -92,6 +93,8 @@ submitDeathYear.addEventListener('click', () => {
   }
 });
 
+updateCountdownTimer();
+    setInterval(updateCountdownTimer, 1000);
 // Handle death year dialog close
 btnDeathDialogClose.addEventListener('click', () => {
   deathYearDialog.close();

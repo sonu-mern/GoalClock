@@ -327,7 +327,21 @@ dialog .btn-dialog-close {
   color: white;
   text-align: center;
   z-index: 1000;
+  /* border: 2px solid red; */
 }
+/* .countdown-timer2 {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+  z-index: 1000;
+} */
 
 .clock-face .number.dead {
   color: red;
